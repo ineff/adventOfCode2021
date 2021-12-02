@@ -8,7 +8,10 @@ const rl = require('readline');
 
 const submarine = {
     x: 0,
-    y: 0
+    y: 0,
+    showIt() {
+	return `{x = ${this.x}, y = ${this.y}}`;
+    }
 };
 const cmdSubMar = function (sbm, cmd) {
     let data = null;
@@ -30,7 +33,10 @@ const cmdSubMar = function (sbm, cmd) {
 const submarine2 = {
     x: 0,
     y: 0,
-    aim: 0
+    aim: 0,
+    showIt() {
+	return `{x=${this.x}, y=${this.y}, aim=${this.aim}}`;
+    }
 };
 
 const cmdSubMar2 = function (sbm, cmd) {
@@ -66,7 +72,7 @@ rl.createInterface({input: fs.createReadStream('2DicAoc.txt')}).on(
 ).on(
     'close', // once we have finished reading the input....
     () => {
-	console.log(`The first problem produce a submarine = ${submarine.toString()}\n`);
+	console.log(`The first problem produce a submarine = ${submarine.showIt()}\n`);
 	console.log(`The first solution is ${submarine.x * submarine.y}\n`);
 	return ;
     }
@@ -79,7 +85,7 @@ rl.createInterface({input: fs.createReadStream('2DicAoc.txt')}).on(
 ).on(
     'close',
     () => {
-	console.log(`The second problem produce a submare = ${submarine2.toString()}\n`);
+	console.log(`The second problem produce a submare = ${submarine2.showIt()}\n`);
 	console.log(`The solution to the second problem is ${submarine2.x * submarine2.y}\n`);
 	return ;
     }

@@ -19,6 +19,9 @@ const acc = {
     set cur(val) {
 	this.state[this.pos] = val;
 	return val;
+    },
+    showIt() {
+	return `\{ ${this.state} \}`;
     }
 };
 
@@ -42,7 +45,7 @@ readline.createInterface({input: fs.createReadStream('1DicAoc.txt')}).on(
 ).on(
     'close',
     function () {
-	console.log(`The final position of the submarine is ${acc.toString()}`);
+	console.log(`The final position of the submarine is ${acc.showIt()}`);
 	console.log(`The solution is ${counter}`);
 	return; 
     }
@@ -69,6 +72,9 @@ const acc2 = {
     set cur(val) {
 	this.state[this.pos] = val;
 	return val;
+    },
+    showIt() {
+	return `${this.state} with lastTriple = ${this.lastTriple}`;
     }
 };
 
@@ -99,7 +105,7 @@ readline.createInterface({input: fs.createReadStream('1DicAoc.txt')}).on(
 ).on(
     'close',
     function () {
-	console.log(`The final position of the submarine is ${acc2.toString()}`);
+	console.log(`The final position of the submarine is ${acc2.showIt()}`);
 	console.log(`The solution is ${counter2}`);
 	return; 
     }
