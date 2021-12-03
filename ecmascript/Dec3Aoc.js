@@ -78,7 +78,8 @@ function leastCommon(list) {
 	    else
 		oneList.push(list[i]);
 	}
-	if (oneList.length >= zeroList.length && zeroList.length > 0)
+	if ((oneList.length >= zeroList.length && zeroList.length > 0)||
+	    oneList.length === 0)
 	    list = zeroList;
 	else
 	    list = oneList;
