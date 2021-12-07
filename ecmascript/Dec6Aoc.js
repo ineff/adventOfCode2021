@@ -1,6 +1,6 @@
 /* 
 * Solutions to the problems of the advent of code 2021
-* 5 Dec 2021
+* 6 Dec 2021
 */
 const fs = require('fs');
 const rl = require('readline');

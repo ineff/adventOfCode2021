@@ -136,8 +136,8 @@ const renderLine = function(grid, coords, prob) {
     // For the second problem we consider also diagonal lines with ang.coeff 1 or -1
     else if (prob === 2 && Math.abs(coords.x2-coords.x1) === Math.abs(coords.y2-coords.y1)) { 
 	// We have a diagonal line
-	console.log('We found a diagonal line');
-	console.log(`${coords.x1},${coords.y1}-->${coords.x2},${coords.y2}`);
+	// console.log('We found a diagonal line');
+	// console.log(`${coords.x1},${coords.y1}-->${coords.x2},${coords.y2}`);
 	let i = 0;
 	let j = 0;
 	let step = 0;

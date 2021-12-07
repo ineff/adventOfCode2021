@@ -5,11 +5,14 @@
 const fs = require('fs');
 const rl = require('readline');
 
+
+// A function for comparing number, because javascript
 const cmpNum = (x,y) => (x === y) ? 0 : ((x < y)? -1 : 1);
 
-/* const computeCost = function (array, pos) {
-    return array.reduce((acc, val) => acc+Math.abs(pos-val),0);
-    };*/
+/* 
+ * The function that computes that cost for the first part 
+ * of the problem 
+ */
 const computeCost = function (array,pos) {
     let res = 0;
     for (let i = 0; i < array.length; i++) {
@@ -18,6 +21,10 @@ const computeCost = function (array,pos) {
     return res;
 };
 
+/*
+ * the function that search for the argmin and 
+ * the min of the cost function for the first part of the problem
+ */
 const findMin = function (array) {
     array.sort(cmpNum);
     let n = array.length;
@@ -28,11 +35,19 @@ const findMin = function (array) {
     };
 };
 
+/*
+ * the function that computes that cost of fuel 
+ * for the second part of the problem 
+ */
 const secondCost = (array, val) => array.reduce(
     (acc,el) => acc+Math.abs(el - val)*(Math.abs(el-val)+1)/2,
     0
 );
 
+/* 
+ * the function that search for the argmin
+ * of the second cost function 
+ */
 const findMin2 = function (array) {
     array.sort(cmpNum);
     let i = 0;
